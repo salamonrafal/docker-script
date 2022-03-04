@@ -1,5 +1,5 @@
 from app.Interfaces import ProviderFactoryInterface, ReaderInterface, WriterInterface
-from lib import ParametersFactory
+from app import ParametersFactory
 from app.Exceptions import GeneralExceptions
 from app.Locale.Labels import Labels
 

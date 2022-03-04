@@ -18,7 +18,10 @@ class ShortAliases:
     def set_shorts(self, key: str, value: str, value_type: str): self.__metadata[key] = {"long_name": value, "type": value_type}
     
     def set_cache(self, key: str, value: []): self.__cache[key] = value
+
+
 pass
+
 
 def extract_lines(text, obj, return_type_value):
     lines = text.split('\n')
@@ -31,6 +34,7 @@ def extract_lines(text, obj, return_type_value):
         line_num = line_num + 1
     return obj
 
+
 def extract_short_names(line, line_num, obj, return_type_value):
     if line != "" and line_num == 0:
         a = line.strip(). \
@@ -39,6 +43,7 @@ def extract_short_names(line, line_num, obj, return_type_value):
         
         obj.set_shorts(obj, a[1], a[0], return_type_value)
     return obj
+
 
 def extract_cache_data(line, line_num, obj):
     pre_text = "cache "
@@ -57,13 +62,13 @@ def extract_cache_data(line, line_num, obj):
         obj.set_cache(obj, a[0], list_cache_fields)
     return obj
 
+
 def param_shorts(obj: ShortAliases) -> ShortAliases:
     members = inspect.getmembers(obj)
     
     for member in members:
         k, v = member
-        
-        
+
         if hasattr(v, '__call__'):
             c = inspect.getcomments(v)
             if c is not None:
@@ -79,6 +84,3 @@ def param_shorts(obj: ShortAliases) -> ShortAliases:
                     obj = extract_lines(c, obj, return_type_value)
     
     return obj
-
-    
-    

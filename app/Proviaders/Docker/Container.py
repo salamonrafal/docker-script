@@ -1,7 +1,7 @@
-from app.Interfaces import ProviderInterface
 from typing import List
 from app.Interfaces import ProviderInterface
 from app.Models import Command, ImageName
+
 
 class Container(ProviderInterface):
     __APPLICATION = "docker"
@@ -16,10 +16,8 @@ class Container(ProviderInterface):
             ["."]
         ]
         command = Command(self.__APPLICATION, self.__COMMAND_NAME, params)
-
-        print("Command: ", command)
         
         if not parameters.get_silent():
-            print(cmd)
+            print("Command: ", command)
             
         pass

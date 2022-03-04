@@ -7,7 +7,6 @@ from app.Validators.ParametersValidator import ParametersValidator
 from app.Constants import CONFIG_CACHE_PARAMETERS_FILE_PATH, DEFAULT_LANGUAGE
 
 
-
 class ParametersFactory(ParametersFactoryInterface):
     file_reader: ReaderInterface
     file_writer: WriterInterface
