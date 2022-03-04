@@ -1,5 +1,5 @@
 import sys
-from lib import Bootstrap,\
+from app import Bootstrap,\
     ProviderFactory,\
     FileWriter,\
     FileReader,\
