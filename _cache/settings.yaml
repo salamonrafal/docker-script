@@ -1,0 +1,7 @@
+docker:
+  containers_name: "web,app:php"
+  docker_file: "Dockerfile"
+  environment: "development"
+  image_name: "custom-php-fpm"
+  prefix_name: "app-service-"
+  version: "1.0"

@@ -1,0 +1,27 @@
+version: "3.7"
+services:
+  web:
+    image: nginx:1.21.5
+    container_name: app-service-web
+    labels:
+      com.salamonrtafal.name: "app-service-web"
+    ports:
+      - 80:80
+    volumes:
+      - ./src/:/var/www/web
+      - ./docker/nginx/site.conf:/etc/nginx/conf.d/site.conf
+    depends_on:
+      - app
+
+  app:
+    build:
+      context: ./
+      labels:
+        com.salamonrtafal.name: "app-service-php-image"
+    image: custom-php-fpm:1.0
+    container_name: app-service-php
+    labels:
+      com.salamonrtafal.name: "app-service-php"
+    volumes:
+      - ./src/:/var/www/web
+      - ./docker/php/php.ini:/usr/local/etc/php/php.ini
