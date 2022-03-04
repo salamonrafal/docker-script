@@ -1,4 +1,4 @@
-from lib.Interfaces import ProviderInterface
+from app.Interfaces import ProviderInterface
 
 
 class Image(ProviderInterface):

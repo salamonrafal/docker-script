@@ -10,4 +10,4 @@ class ProviderInterface:
         pass
 
     @abstractmethod
-    def execute(self, args=[]) -> bool: raise NotImplementedError
+    def execute(self, *args) -> bool: raise NotImplementedError

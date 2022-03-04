@@ -1,13 +1,22 @@
 import sys
+from app.Writers import *
+from app.Readers import *
+from app.Constants.Locale import Locale
+from app.Locale import Labels
 from app import Bootstrap,\
     ProviderFactory,\
-    FileWriter,\
-    FileReader,\
     ParametersFactory,\
     UnhandledCommandException
 
 
-app = Bootstrap(ProviderFactory(), FileReader(), FileWriter(), ParametersFactory())
+labels = Labels(Locale)
+app = Bootstrap(
+    ProviderFactory(YamlReader(), YamlWriter(), labels),
+    FileReader(),
+    FileWriter(),
+    ParametersFactory(YamlReader(), YamlWriter(), labels),
+    labels
+)
 
 # noinspection PyBroadException
 try:

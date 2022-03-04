@@ -1,6 +1,6 @@
-from lib.Interfaces import ReaderInterface
+from app.Interfaces import ReaderInterface
 
 
 class FileReader(ReaderInterface):
-    def read(self, name) -> str:
+    def read(self, name):
         pass

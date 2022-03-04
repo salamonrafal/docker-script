@@ -5,4 +5,4 @@ class ReaderInterface:
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def read(self, name) -> str: raise NotImplementedError
+    def read(self, name): raise NotImplementedError

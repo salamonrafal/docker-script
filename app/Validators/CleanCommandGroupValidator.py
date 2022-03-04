@@ -1,4 +1,4 @@
-from lib.Validators.GroupValidator import GroupValidator
+from app.Validators.GroupValidator import GroupValidator
 
 
 class CleanCommandGroupValidator(GroupValidator):

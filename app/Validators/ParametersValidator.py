@@ -1,11 +1,11 @@
-from lib.Interfaces import ValidatorInterface
-from lib.Models.Parameters import Parameters
-from lib.Validators.DockerContainerCommandGroupValidator import DockerContainerCommandGroupValidator
-from lib.Validators.DockerImageCommandGroupValidator import DockerImageCommandGroupValidator
-from lib.Validators.DockerComposeCommandGroupValidator import DockerComposeCommandGroupValidator
-from lib.Validators.BuildCommandGroupValidator import BuildCommandGroupValidator
-from lib.Validators.CleanCommandGroupValidator import CleanCommandGroupValidator
-from lib.Exceptions import ValidationException
+from app.Interfaces import ValidatorInterface
+from app.Models.Parameters import Parameters
+from app.Validators.DockerContainerCommandGroupValidator import DockerContainerCommandGroupValidator
+from app.Validators.DockerImageCommandGroupValidator import DockerImageCommandGroupValidator
+from app.Validators.DockerComposeCommandGroupValidator import DockerComposeCommandGroupValidator
+from app.Validators.BuildCommandGroupValidator import BuildCommandGroupValidator
+from app.Validators.CleanCommandGroupValidator import CleanCommandGroupValidator
+from app.Exceptions import ValidationException
 
 
 class ParametersValidator(ValidatorInterface):

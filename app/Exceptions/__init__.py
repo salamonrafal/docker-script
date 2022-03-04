@@ -1,2 +1,2 @@
-from lib.Exceptions.UnhandledCommandException import *
-from lib.Exceptions.ValidationException import *
+from app.Exceptions.UnhandledCommandException import *
+from app.Exceptions.ValidationException import *

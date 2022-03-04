@@ -1,1 +1,1 @@
-from lib.Validators.ParametersValidator import *
+from app.Validators.ParametersValidator import *

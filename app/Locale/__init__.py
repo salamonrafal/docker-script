@@ -1,2 +1,2 @@
-from lib.Locale.en_en import *
+from app.Locale.Labels import *
 

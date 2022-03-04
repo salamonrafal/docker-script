@@ -5,4 +5,4 @@ class WriterInterface:
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def write(self, name) -> bool: raise NotImplementedError
+    def write(self, name: str, data) -> bool: raise NotImplementedError

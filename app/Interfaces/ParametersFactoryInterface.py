@@ -1,5 +1,5 @@
 from abc import abstractmethod, ABCMeta
-from lib.Models.Parameters import Parameters
+from app.Models.Parameters import Parameters
 
 
 class ParametersFactoryInterface:
