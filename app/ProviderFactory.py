@@ -1,6 +1,6 @@
-from app.Interfaces import ProviderFactoryInterface, ProviderInterface
-from app.Docker import Image, Container, Compose
-from app.Exceptions import UnhandledCommandException
+from lib.Interfaces import ProviderFactoryInterface, ProviderInterface
+from lib.Docker import Image, Container, Compose
+from lib.Exceptions import UnhandledCommandException
 
 
 class ProviderFactory(ProviderFactoryInterface):

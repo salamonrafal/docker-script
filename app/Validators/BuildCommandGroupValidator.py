@@ -1,4 +1,4 @@
-from app.Validators.GroupValidator import GroupValidator
+from lib.Validators.GroupValidator import GroupValidator
 
 
 class BuildCommandGroupValidator(GroupValidator):

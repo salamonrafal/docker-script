@@ -1,3 +1,3 @@
-from app.Docker.Image import *
-from app.Docker.Compose import *
-from app.Docker.Container import *
+from lib.Docker.Image import *
+from lib.Docker.Compose import *
+from lib.Docker.Container import *

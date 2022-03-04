@@ -1,4 +1,4 @@
-from app.Exceptions.GeneralExceptions import GeneralExceptions
+from lib.Exceptions.GeneralExceptions import GeneralExceptions
 
 
 class ValidationException(GeneralExceptions):

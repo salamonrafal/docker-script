@@ -1,1 +1,1 @@
-from app.Readers.FileReader import *
+from lib.Readers.FileReader import *

@@ -1,4 +1,4 @@
-from app.Annotations import param_shorts, ShortAliases
+from lib.Annotations import param_shorts, ShortAliases
 
 
 @param_shorts

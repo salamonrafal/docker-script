@@ -1,4 +1,4 @@
-from app.Interfaces import WriterInterface
+from lib.Interfaces import WriterInterface
 
 
 class FileWriter(WriterInterface):

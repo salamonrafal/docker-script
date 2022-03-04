@@ -1,6 +1,6 @@
-from app.Interfaces import ProviderFactoryInterface, ReaderInterface, WriterInterface
-from app import ParametersFactory
-from app.Exceptions import GeneralExceptions
+from lib.Interfaces import ProviderFactoryInterface, ReaderInterface, WriterInterface
+from lib import ParametersFactory
+from lib.Exceptions import GeneralExceptions
 
 
 class Bootstrap:

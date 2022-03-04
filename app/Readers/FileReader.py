@@ -1,4 +1,4 @@
-from app.Interfaces import ReaderInterface
+from lib.Interfaces import ReaderInterface
 
 
 class FileReader(ReaderInterface):

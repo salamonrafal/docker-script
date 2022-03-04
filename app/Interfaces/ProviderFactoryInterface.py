@@ -1,5 +1,5 @@
 from abc import abstractmethod, ABC
-from app.Interfaces import ProviderInterface
+from lib.Interfaces import ProviderInterface
 
 
 class ProviderFactoryInterface(ABC):

@@ -1,4 +1,4 @@
-from app.Interfaces import ProviderInterface
+from lib.Interfaces import ProviderInterface
 
 
 class Compose(ProviderInterface):

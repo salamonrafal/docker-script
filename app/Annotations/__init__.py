@@ -1,1 +1,1 @@
-from app.Annotations.ShortAliases import *
+from lib.Annotations.ShortAliases import *

@@ -1,7 +1,7 @@
-from app.Interfaces import ParametersFactoryInterface
-from app.Models import Parameters
-from app.Locale import *
-from app.Validators.ParametersValidator import ParametersValidator
+from lib.Interfaces import ParametersFactoryInterface
+from lib.Models import Parameters
+from lib.Locale import *
+from lib.Validators.ParametersValidator import ParametersValidator
 import argparse
 
 

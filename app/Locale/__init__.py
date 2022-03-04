@@ -1,2 +1,2 @@
-from app.Locale.en_en import *
+from lib.Locale.en_en import *
 
