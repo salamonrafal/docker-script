@@ -2,6 +2,7 @@ from app.Interfaces import ProviderFactoryInterface, ReaderInterface, WriterInte
 from app import ParametersFactory
 from app.Exceptions import GeneralExceptions
 from app.Locale.Labels import Labels
+from app.Di import SimplyDi
 
 
 class Bootstrap:
@@ -10,22 +11,22 @@ class Bootstrap:
     file_writer: WriterInterface = None
     parameters_factory: ParametersFactory = None
     labels: Labels
+    script_path: str = None
+    di: SimplyDi = None
 
     # ******************************************************************
 
     def __init__(
         self,
-        provider_factory: ProviderFactoryInterface = None,
-        file_reader: ReaderInterface = None,
-        file_writer: WriterInterface = None,
-        parameters_factory: ParametersFactory = None,
-        labels: Labels = None
+        di: SimplyDi
     ):
-        self.provider_factory = provider_factory
-        self.file_reader = file_reader
-        self.file_writer = file_writer
-        self.parameters_factory = parameters_factory
-        self.labels = labels
+        self.di = di
+        self.provider_factory = di.get_service("provider_factory")
+        self.file_reader = di.get_service("provider_factory")
+        self.file_writer = di.get_service("file_writer")
+        self.parameters_factory = di.get_service("parameters_factory")
+        self.labels = di.get_service("labels")
+        self.script_path = di.get_service("script_dir_name")
         pass
 
     # ******************************************************************

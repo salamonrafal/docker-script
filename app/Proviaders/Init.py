@@ -3,6 +3,8 @@ from app.Interfaces import ReaderInterface, WriterInterface, ProviderInterface
 from app.Constants import CONFIG_CACHE_PARAMETERS_FILE_PATH, DEFAULT_LANGUAGE
 from app.Console import Print, Input
 from app.Locale.Labels import Labels
+from app.Di import SimplyDi
+
 
 CMD_CONFIRMATION_SIGN = "Y"
 
@@ -13,12 +15,13 @@ class Init(ProviderInterface):
     labels: Labels
     label_path = "providers.init"
 
-    def __init__(self, provider_type_arg: str, yaml_reader: ReaderInterface, yaml_writer: WriterInterface,
-                 labels: Labels):
-        super().__init__(provider_type_arg)
-        self.yaml_reader = yaml_reader
-        self.yaml_writer = yaml_writer
-        self.labels = labels
+    def __init__(self, provider_type_arg: str, sdi: SimplyDi):
+        super().__init__(provider_type_arg, sdi)
+
+        self.yaml_reader = sdi.get_service("yaml_reader")
+        self.yaml_writer = sdi.get_service("yaml_writer")
+        self.labels = sdi.get_service("labels")
+
         pass
 
     def execute(self, *args) -> bool:
@@ -71,11 +74,7 @@ class Init(ProviderInterface):
         containers_name_input = Input.input(self.labels, "containers_name_input", DEFAULT_LANGUAGE, self.label_path)
         print()
 
-        return docker_file_input, \
-               environment_input, \
-               image_name_input, \
-               version_input, \
-               prefix_name_input, \
+        return docker_file_input, environment_input, image_name_input, version_input, prefix_name_input, \
                containers_name_input,
 
     def __print_confirmation(self, *args):

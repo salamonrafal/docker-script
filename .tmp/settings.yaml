@@ -1,7 +1,13 @@
 docker:
-  containers_name: "web,app:php"
+  containers_name: "web,php"
   docker_file: "Dockerfile"
   environment: "development"
   image_name: "custom-php-fpm"
   prefix_name: "app-service-"
   version: "1.0"
+ProjectDirectory:
+  path: ""
+git:
+  autoupdate: false
+  repository: ""
+  branch: ""

@@ -5,21 +5,23 @@ from app.Models import Parameters
 from app.Locale import Labels
 from app.Validators.ParametersValidator import ParametersValidator
 from app.Constants import CONFIG_CACHE_PARAMETERS_FILE_PATH, DEFAULT_LANGUAGE
+from app.Di import SimplyDi
 
 
 class ParametersFactory(ParametersFactoryInterface):
-    file_reader: ReaderInterface
-    file_writer: WriterInterface
+    yaml_reader: ReaderInterface
+    yaml_writer: WriterInterface
     labels: Labels
     label_path = "help"
-    
+    Sdi: SimplyDi
+
     # ******************************************************************
     
-    def __init__(self, file_reader: ReaderInterface, file_writer: WriterInterface, labels: Labels):
-        self.file_writer = file_writer
-        self.file_reader = file_reader
-        self.labels = labels
-        
+    def __init__(self, sdi: SimplyDi):
+        self.Sdi = sdi
+        self.yaml_reader = self.Sdi.get_service("yaml_reader")
+        self.yaml_writer = self.Sdi.get_service("yaml_writer")
+        self.labels = self.Sdi.get_service("labels")
         pass
 
     # ******************************************************************
@@ -51,13 +53,13 @@ class ParametersFactory(ParametersFactoryInterface):
         for field in fields:
             data["docker"][field] = parameters[field]
             
-        self.file_writer.write(CONFIG_CACHE_PARAMETERS_FILE_PATH, data)
+        self.yaml_writer.write(CONFIG_CACHE_PARAMETERS_FILE_PATH, data)
         pass
 
     # ******************************************************************
     
     def __read_cache_parameters(self, parameters: Parameters):
-        doc = self.file_reader.read(CONFIG_CACHE_PARAMETERS_FILE_PATH)
+        doc = self.yaml_reader.read(CONFIG_CACHE_PARAMETERS_FILE_PATH)
         for key in doc["docker"]:
             parameters[key] = doc["docker"][key]
         pass
