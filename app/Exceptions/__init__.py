@@ -1,2 +1,5 @@
 from app.Exceptions.UnhandledCommandException import *
 from app.Exceptions.ValidationException import *
+from app.Exceptions.NotRegisteredServiceException import NotRegisteredServiceException
+from app.Exceptions.DuplicatedServiceException import DuplicatedServiceException
+from app.Exceptions.WrongNumberParametersException import WrongNumberParametersException
